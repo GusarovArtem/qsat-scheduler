@@ -1,21 +1,21 @@
---- 0.2
+# Stage 0.2
 def + type hints: функции в Python, аннотации типов как документация для IDE
 pytest discovery: файлы test_*.py, функции test_* — никакой регистрации
 ruff --fix: линтер умеет автоматически исправлять некоторые нарушения
 
 
---- 0.3
+# Stage 0.3
 __init__.py запускается при import qsat — всё в нём становится атрибутом пакета
 pathlib.Path + __file__ — надёжный способ строить пути относительно файла, независимо от cwd
 [build-system] + uv sync — делает пакет installable, import qsat работает везде в venv
 
 
---- 0.4
+# Stage 0.4
 GitHub Actions: YAML-описание пайплайна, uses: vs run:
 [build-system] в pyproject.toml делает пакет installable — без этого import qsat работает только в pytest
 Deprecation warning ≠ ошибка: CI зелёный, предупреждение уйдёт когда авторы обновят экшены
 
---- 1.1
+# Stage 1.1
 Концепт перед кодом: что такое dataclass?
 В backend-разработке часто нужны простые data-контейнеры (DTO, Value Object).
 В Java пишешь конструктор, equals, hashCode, toString вручную.
@@ -43,3 +43,10 @@ ISS (ZARYA)
 @dataclass(frozen=True) — декоратор (аналог аннотации в Java). Генерирует __init__, __repr__, __eq__. frozen=True запрещает изменение полей после создания.
 __post_init__ — специальный метод, который dataclass вызывает после своего __init__. Единственное правильное место для валидации в frozen dataclass.
 f"..." — f-string, аналог string interpolation: f"got {self.norad_id}" подставляет значение переменной.
+
+@dataclass(frozen=True) — генерирует __init__, __repr__, __eq__; frozen делает объект иммутабельным
+__post_init__ — хук для валидации после инициализации frozen dataclass
+@pytest.mark.parametrize — один тест × N входных значений вместо N дублирующих функций
+
+
+# Stage 1.2
