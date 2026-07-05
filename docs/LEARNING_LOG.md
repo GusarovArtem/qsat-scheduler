@@ -50,3 +50,6 @@ __post_init__ — хук для валидации после инициализ
 
 
 # Stage 1.2
+pytest fixtures: @pytest.fixture + имя аргумента в тесте — инжекция данных без дублирования
+response.raise_for_status() — один вызов вместо ручной проверки HTTP-статуса
+Срез line1[2:7] — Python slice синтаксис, аналог substring
