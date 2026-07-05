@@ -1,6 +1,6 @@
 import pytest
 
-from qsat.domain.models import Satellite
+from qsat.domain.models import Satellite, Target
 
 
 def test_satellite_valid():
@@ -18,3 +18,13 @@ def test_satellite_rejects_bad_norad_id():
     # norad_id must be a positive integer
     with pytest.raises(ValueError):
         Satellite(name="X", norad_id=-1, tle_line1="1 ...", tle_line2="2 ...")
+
+@pytest.mark.parametrize("bad_lat", [-91, 91, 200, -180])
+def test_target_rejects_invalid_lat(bad_lat):
+    # each bad_lat value runs this test independently
+    with pytest.raises(ValueError):
+        Target(name="X", lat=bad_lat, lon=0.0, value=10.0)
+
+def test_target_valid():
+    t = Target(name="Warsaw", lat=52.2, lon=21.0, value=10.0)
+    assert t.min_elevation_deg == 10.0 # default value

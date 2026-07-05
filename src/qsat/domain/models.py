@@ -17,3 +17,21 @@ class Satellite:
             raise ValueError(f"tle_line1 must start with '1 ', got {self.tle_line1}")
         if not self.tle_line2.startswith("2 "):
             raise ValueError(f"tle_line2 must start with '2 ', got {self.tle_line2}")
+
+@dataclass(frozen=True)
+class Target:
+    """ An imaging target on Earth's surface with a priority value."""
+    name: str
+    lat: float                       # degrees, -90..90
+    lon: float                       # degrees, -180..180
+    value: float                     # relative priority weight, must be positive
+    min_elevation_deg: float = 10.0  # default min elevation for imaging
+
+
+    def __post_init__(self) -> None:
+        if not -90 <= self.lat <= 90:
+            raise ValueError(f"lat must be in [-90, 90], got {self.lat}")
+        if not -180 <= self.lon <= 180:
+            raise ValueError(f"lat must be in [-180, 180], got {self.lon}")
+        if self.value <= 0:
+            raise ValueError(f"value must be positive, got {self.value}")
