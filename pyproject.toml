@@ -21,3 +21,9 @@ line-length = 88
 # F - logic errors for ex. unused imports
 # I - imports order
 select = ["E", "F","I"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build" # to make rsat be imported glibally inside venv
+[tool.hatch.build.targets.wheel]
+packages = ["src/qsat"]
