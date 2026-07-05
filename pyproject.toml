@@ -9,3 +9,15 @@ dev = [
     "pytest>=9.1.1",
     "ruff>=0.15.20",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.ruff]
+# Black formatters standard - norm in the python community
+line-length = 88
+[tool.ruff.lint]
+# E - style PEP 8
+# F - logic errors for ex. unused imports
+# I - imports order
+select = ["E", "F","I"]
