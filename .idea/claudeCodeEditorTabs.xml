@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ClaudeCodeEditorTabs">
-    <option name="activeSessionId" value="719ffd8e-6af4-4b9c-bf41-f681ee7931c3" />
+    <option name="activeSessionId" value="f986be38-50d2-4aed-9989-4fb7abeaa9e5" />
     <option name="openSessionIds">
       <list>
         <option value="719ffd8e-6af4-4b9c-bf41-f681ee7931c3" />
+        <option value="f986be38-50d2-4aed-9989-4fb7abeaa9e5" />
       </list>
     </option>
     <option name="sessionPaths">
       <map>
         <entry key="719ffd8e-6af4-4b9c-bf41-f681ee7931c3" value="/sessions/2f86a5b2-56a2-433c-b709-51afd4578734" />
+        <entry key="f986be38-50d2-4aed-9989-4fb7abeaa9e5" value="/sessions/new" />
       </map>
     </option>
     <option name="sessionTitles">
       <map>
         <entry key="719ffd8e-6af4-4b9c-bf41-f681ee7931c3" value="please check CLUADE.md and PLAN files, I have alre" />
+        <entry key="f986be38-50d2-4aed-9989-4fb7abeaa9e5" value="Claude Code" />
       </map>
     </option>
   </component>
