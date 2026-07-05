@@ -1,9 +1,10 @@
 import time
 from pathlib import Path
-from unittest import result
 
 import requests
+
 from qsat.domain.models import Satellite
+
 
 def parse_tle_text(text: str) -> list[Satellite]:
     """ Parse a multi-satellite TLE text block into a list of Satellite objects. """
