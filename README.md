@@ -1,3 +1,3 @@
 #QSAT Scheduler
 Quantum-Assisted Satellite Constellation Tasking
-![CI](https://github.com/GusarovArtem/qstat-scheduler/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/GusarovArtem/qsat-scheduler/actions/workflows/ci.yml/badge.svg)
