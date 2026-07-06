@@ -18,7 +18,7 @@ def subpoint(sat: Satellite, t: datetime) -> tuple[float, float, float]:
     sky_t = ts.utc(t.year, t.month, t.day, t.hour, t.minute, t.second)
 
     geocentric = sky_sat.at(sky_t)
-    # processe vector on the Earth land by WGS84 model
+    # processes vector on the Earth land by WGS84 model
     subpnt = wgs84.subpoint(geocentric) # (same ellipse that in the GPS)
     return (
         subpnt.latitude.degrees,
