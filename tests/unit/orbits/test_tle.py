@@ -4,7 +4,7 @@ import pytest
 
 from qsat.orbits.tle import parse_tle_text
 
-FIXTURES_DIR = Path(__file__).parent.parent / "fixtures"
+FIXTURES_DIR = Path(__file__).parent.parent.parent / "fixtures"
 
 @pytest.fixture
 def tle_text() -> str:

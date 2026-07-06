@@ -2,7 +2,7 @@ from datetime import datetime
 from datetime import timezone
 
 from qsat.domain.models import Satellite, Target
-from qsat.orbits.geometry import look_angels
+from qsat.orbits.geometry import look_angles
 from qsat.orbits.propagate import subpoint
 
 ISS = Satellite(
@@ -19,7 +19,7 @@ def test_elevation_overhead():
     # target placed at the satellite's own subpoint -> elevation must be near 90 degrees
     lat, lon, _ = subpoint(ISS, T)
     target = Target(name="overhead", lat=round(lat, 4), lon=round(lon, 4), value=1.0)
-    el, _ = look_angels(ISS, target, T)
+    el, _ = look_angles(ISS, target, T)
     assert el > 85
 
 
@@ -31,5 +31,5 @@ def test_elevation_below_horizon():
         lat=-lat,
         lon=lon + 180 if lon <= 0 else lon - 180,
         value=1.0)
-    el, _ = look_angels(ISS, far_target, T)
+    el, _ = look_angles(ISS, far_target, T)
     assert el < 0

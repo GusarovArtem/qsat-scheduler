@@ -5,7 +5,7 @@ from skyfield.api import load, EarthSatellite, wgs84
 from qsat.domain.models import Satellite, Target
 
 
-def look_angels(sat: Satellite, target: Target, t: datetime) -> tuple[float, float]:
+def look_angles(sat: Satellite, target: Target, t: datetime) -> tuple[float, float]:
     """ Return (elevation_deg, azimuth,deg) of sat as seen from target at UTC time t. """
     ts = load.timescale()
     sky_sat = EarthSatellite(sat.tle_line1, sat.tle_line2, sat.name, ts) # vector observer -> satellite (topocentric)

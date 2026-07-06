@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from datetime import datetime
 
 
 @dataclass(frozen=True)
@@ -35,3 +36,13 @@ class Target:
             raise ValueError(f"lat must be in [-180, 180], got {self.lon}")
         if self.value <= 0:
             raise ValueError(f"value must be positive, got {self.value}")
+
+@dataclass(frozen=True)
+class AccessWindow:
+    """ One continious pass of sat above target's horizon. """
+    sat: Satellite
+    target: Target
+    rise: datetime # ↑ rise
+    culminate: datetime # ↑ peak
+    set_:datetime #set_ because is a Python build-in name
+    max_elevation_deg: float
