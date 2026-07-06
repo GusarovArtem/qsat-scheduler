@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+
 from qsat.domain.models import Satellite
 from qsat.orbits.propagate import subpoint
 
