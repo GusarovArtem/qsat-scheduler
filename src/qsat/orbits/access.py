@@ -1,8 +1,7 @@
 from datetime import datetime, timedelta
 
-from qsat.domain.models import Satellite, Target, AccessWindow
+from qsat.domain.models import AccessWindow, Satellite, Target
 from qsat.orbits.geometry import look_angles
-
 
 # i →  0    1    2    3    4    5    6
 # el: -5°  -2°  +8° +43° +12°  -3°  -8°

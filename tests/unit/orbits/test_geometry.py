@@ -1,5 +1,4 @@
-from datetime import datetime
-from datetime import timezone
+from datetime import datetime, timezone
 
 from qsat.domain.models import Satellite, Target
 from qsat.orbits.geometry import look_angles

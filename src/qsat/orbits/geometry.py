@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from skyfield.api import load, EarthSatellite, wgs84
+from skyfield.api import EarthSatellite, load, wgs84
 
 from qsat.domain.models import Satellite, Target
 

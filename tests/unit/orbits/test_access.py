@@ -1,5 +1,4 @@
 from datetime import datetime, timezone
-from locale import windows_locale
 
 from qsat.domain.models import Satellite, Target
 from qsat.orbits.access import find_access_windows
