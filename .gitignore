@@ -166,6 +166,7 @@ profile.out
 
 /docs/
 /REFERENCE.py
+/out/
 
 # ============================================================================
 # Keep these under version control
