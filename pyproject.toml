@@ -5,7 +5,9 @@ requires-python = ">=3.12"
 dependencies = [
     "datetime>=6.0",
     "requests>=2.34.2",
+    "rich>=15.0.0",
     "skyfield>=1.54",
+    "typer>=0.26.8",
 ]
 
 [dependency-groups]
@@ -30,3 +32,6 @@ requires = ["hatchling"]
 build-backend = "hatchling.build" # to make rsat be imported glibally inside venv
 [tool.hatch.build.targets.wheel]
 packages = ["src/qsat"]
+
+[project.scripts]
+qsat = "qsat.cli:app"
